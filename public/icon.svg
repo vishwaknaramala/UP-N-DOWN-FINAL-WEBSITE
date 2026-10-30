@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <rect width="500" height="500" fill="#09090b" rx="80" />
+  <!-- UP N DOWN Official Master Logo (Every Detail Vector Rendition) -->
+  <defs>
+    <linearGradient id="icon-sheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="65%" stopColor="#f4f0ea" />
+      <stop offset="100%" stopColor="#d4d4d8" />
+    </linearGradient>
+  </defs>
+
+  <g fill="url(#icon-sheen)">
+    <!-- 1. LETTER "U" (Zenith / Elevated Phase) with Top-Left Arrow Spur -->
+    <path d="M 112 118 L 142 90 L 172 118 L 156 118 L 156 250 C 156 295 178 322 214 322 C 238 322 250 308 256 286 L 256 122 L 288 122 L 288 288 C 288 335 258 358 214 358 C 158 358 124 315 124 250 L 124 118 Z" />
+
+    <!-- 2. LETTER "N" (Central Phase Bridge / "SAME ENERGY") -->
+    <path d="M 228 178 L 252 178 L 286 288 L 286 178 L 310 178 L 310 326 L 286 326 L 252 216 L 252 326 L 228 326 Z" opacity="0.92" />
+
+    <!-- 3. LETTER "D" (Foundation / Grounded Phase) with Bottom-Left Razor Spur -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M 298 178 L 358 178 C 406 178 440 212 440 262 C 440 316 402 352 348 352 L 250 352 L 228 382 L 250 410 L 272 382 L 298 382 L 298 352 L 298 178 Z M 330 210 L 330 320 L 348 320 C 382 320 406 298 406 262 C 406 226 382 210 348 210 L 330 210 Z" />
+
+    <!-- 4. CELESTIAL 4-POINTED COMPASS STAR (✦) -->
+    <path d="M 256 182 C 256 226 222 250 190 250 C 222 250 256 274 256 318 C 256 274 290 250 322 250 C 290 250 256 226 256 182 Z" />
+
+    <!-- Radiant Meridian Axis Needles -->
+    <line x1="256" y1="168" x2="256" y2="332" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="178" y1="250" x2="334" y2="250" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+
+    <!-- 4 Cardinal Energy Points -->
+    <circle cx="256" cy="164" r="2" fill="#ffffff" />
+    <circle cx="256" cy="336" r="2" fill="#ffffff" />
+    <circle cx="174" cy="250" r="2" fill="#ffffff" />
+    <circle cx="338" cy="250" r="2" fill="#ffffff" />
+  </g>
+</svg>

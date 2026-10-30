@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "UP N DOWN — SAME ENERGY DIFFERENT PHASE",
+  "short_name": "UP N DOWN",
+  "description": "Born from passion, UP N DOWN was created to redefine streetwear with a premium feel. Heavyweight hoodies, boxy tees, and structured caps. Launching November 17, 2026. Join the club.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#050507",
+  "theme_color": "#050507",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle", "fashion"]
+}

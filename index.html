@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="light theme-light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>UP N DOWN — SAME ENERGY DIFFERENT PHASE · Streetwear Drop 31st Dec 2026 · 18:00 IST</title>
+    <meta name="description" content="Born from passion, UP N DOWN was created to redefine streetwear with a premium feel. Same energy, different phase. Baseball cap, denim loose pant, and heavy tees launching 31st Dec 2026 at 18:00 IST. Strictly 100 slots only. Join the club." />
+
+    <!-- Instant Anti-Flicker Theme Initializer (Defaults to White; Respects Customer's Saved Preference) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('upndown_bw_palette');
+          var isDark = saved === 'black';
+          var root = document.documentElement;
+          if (isDark) {
+            root.classList.add('theme-dark', 'dark');
+            root.classList.remove('theme-light', 'light');
+            root.style.setProperty('--bg-main', '#000000');
+            root.style.setProperty('--bg-subtle', '#09090c');
+            root.style.setProperty('--bg-card', '#0a0a0e');
+            root.style.setProperty('--bg-card-header', '#111116');
+            root.style.setProperty('--border-main', '#27272a');
+            root.style.setProperty('--border-subtle', '#18181b');
+            root.style.setProperty('--border-strong', '#52525b');
+            root.style.setProperty('--text-primary', '#ffffff');
+            root.style.setProperty('--text-secondary', '#d4d4d8');
+            root.style.setProperty('--text-muted', '#71717a');
+            root.style.setProperty('--accent-main', '#ffffff');
+            root.style.setProperty('--btn-bg', '#ffffff');
+            root.style.setProperty('--btn-text', '#000000');
+            root.style.setProperty('--btn-hover-bg', '#e4e4e7');
+          } else {
+            root.classList.add('theme-light', 'light');
+            root.classList.remove('theme-dark', 'dark');
+            root.style.setProperty('--bg-main', '#ffffff');
+            root.style.setProperty('--bg-subtle', '#f4f4f5');
+            root.style.setProperty('--bg-card', '#ffffff');
+            root.style.setProperty('--bg-card-header', '#f4f4f5');
+            root.style.setProperty('--border-main', '#e4e4e7');
+            root.style.setProperty('--border-subtle', '#f4f4f5');
+            root.style.setProperty('--border-strong', '#71717a');
+            root.style.setProperty('--text-primary', '#09090b');
+            root.style.setProperty('--text-secondary', '#27272a');
+            root.style.setProperty('--text-muted', '#71717a');
+            root.style.setProperty('--accent-main', '#000000');
+            root.style.setProperty('--btn-bg', '#000000');
+            root.style.setProperty('--btn-text', '#ffffff');
+            root.style.setProperty('--btn-hover-bg', '#27272a');
+          }
+        } catch(e) {}
+      })();
+    </script>
+    
+    <!-- PWA & Mobile Meta -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="UP N DOWN" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/assets/aistudio/UP_N_DOWN_LOGO_00d318c2.png" />
+    <link rel="apple-touch-icon" href="/assets/aistudio/UP_N_DOWN_LOGO_00d318c2.png" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="UP N DOWN — SAME ENERGY DIFFERENT PHASE" />
+    <meta property="og:description" content="Born from passion, UP N DOWN was created to redefine streetwear with a premium feel. Baseball cap, denim loose pant, and heavy tees launching 31st Dec 2026 at 18:00 IST. Strictly 100 slots only. Join the club." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/aistudio/UP_N_DOWN_LOGO_00d318c2.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UP N DOWN — SAME ENERGY DIFFERENT PHASE" />
+    <meta name="twitter:description" content="Baseball cap, denim loose pant, and heavy tees launching 31st Dec 2026 at 18:00 IST. Strictly 100 slots only. Join the club. Instagram: @upndown.ofc" />
+
+    <!-- Google Fonts: Syne (high-fashion streetwear display) & Space Mono & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[var(--bg-main)] text-[var(--text-primary)] antialiased selection:bg-[var(--text-primary)] selection:text-[var(--bg-main)] min-h-screen overflow-x-hidden transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
