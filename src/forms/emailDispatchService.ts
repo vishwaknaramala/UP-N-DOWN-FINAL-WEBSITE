@@ -1,4 +1,6 @@
 // Live Email Dispatch Engine for UP N DOWN Atelier Club Members
+import { registerDirectToSupabase } from '../utils/supabaseDirectClient';
+
 export interface EmailDeliveryReceipt {
   messageId: string;
   recipientEmail: string;
@@ -234,18 +236,23 @@ export async function dispatchLiveClubEmail(params: {
   let ownerRecipient = '';
   let resendMessageId: string | undefined;
   let error: string | null = null;
-
   try {
-    const res = await fetch('/api/send-club-registration', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        ...params,
-        shirt_size: params.shirt_size || params.sizePreference,
-      }),
-    });
+    let res: Response | null = null;
+    try {
+      res = await fetch('/api/send-club-registration', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...params,
+          shirt_size: params.shirt_size || params.sizePreference,
+        }),
+      });
+    } catch (networkFetchErr) {
+      // API endpoint is unreachable (e.g. pure static Vercel host or network offline)
+      res = null;
+    }
 
-    if (res.ok) {
+    if (res && res.ok) {
       const data = await res.json();
       if (data.mode === 'live_resend') {
         provider = 'Resend Live Verified Email';
@@ -258,29 +265,70 @@ export async function dispatchLiveClubEmail(params: {
       if (data.customerDelivery?.error) {
         error = data.customerDelivery.error;
       }
-    } else {
+    } else if (res && res.status === 409) {
       const errData = await res.json().catch(() => ({}));
-      const errorMsg =
-        errData.error ||
-        (res.status === 409
-          ? 'This email is already registered.'
-          : res.status === 403
-            ? 'Database RLS policy is active on CLUB_REGISTRATIONS. Run the script in your Supabase SQL editor (see supabase-schema.sql) to enable registrations.'
-            : 'Registration could not be completed. Please check your information and retry.');
-      const validationError = new Error(errorMsg);
-      (validationError as any).code = errData.code || (res.status === 409 ? 'DUPLICATE_EMAIL' : 'VALIDATION_FAILED');
-      (validationError as any).status = res.status;
+      const validationError = new Error(errData.error || 'This email is already registered.');
+      (validationError as any).code = 'DUPLICATE_EMAIL';
+      (validationError as any).status = 409;
       throw validationError;
+    } else if (res && res.status === 403) {
+      const validationError = new Error('Database RLS policy is active on CLUB_REGISTRATIONS. Run the script in your Supabase SQL editor (see supabase-schema.sql) to enable registrations.');
+      (validationError as any).code = 'RLS_RESTRICTION';
+      (validationError as any).status = 403;
+      throw validationError;
+    } else {
+      // Server returned 404, 500, or network was unreachable (common on Vercel before serverless setup)
+      // Execute direct resilient browser fallback to Supabase CLUB_REGISTRATIONS table
+      const directResult = await registerDirectToSupabase({
+        name: params.name,
+        email: params.email,
+        phone: params.phone,
+        sizePreference: params.sizePreference,
+        tshirtSize: params.tshirtSize,
+        pantSize: params.pantSize,
+        capSize: params.capSize,
+      });
+
+      if (directResult.success) {
+        provider = 'Supabase Direct Cloud Database (Browser Verified)';
+        messageId = `sb_direct_${directResult.record?.id || Date.now()}`;
+        console.log('[Supabase Direct Fallback Success]: Row inserted into CLUB_REGISTRATIONS', directResult.record);
+      } else if (directResult.code === 'DUPLICATE_EMAIL') {
+        const validationError = new Error('This email is already registered.');
+        (validationError as any).code = 'DUPLICATE_EMAIL';
+        (validationError as any).status = 409;
+        throw validationError;
+      } else if (directResult.code === 'CAPACITY_REACHED') {
+        const validationError = new Error(directResult.error || 'THE CLUB allocation is fully booked. All 100 member slots for Drop 01 have been claimed.');
+        (validationError as any).code = 'CAPACITY_REACHED';
+        (validationError as any).status = 400;
+        throw validationError;
+      } else if (directResult.code === 'RLS_RESTRICTION') {
+        const validationError = new Error('Database RLS policy is active on CLUB_REGISTRATIONS. Run the script in your Supabase SQL editor (see supabase-schema.sql) to enable public registrations.');
+        (validationError as any).code = 'RLS_RESTRICTION';
+        (validationError as any).status = 403;
+        throw validationError;
+      } else {
+        const errData = res ? await res.json().catch(() => ({})) : {};
+        const errorMsg =
+          errData.error ||
+          directResult.error ||
+          'Registration could not be completed. Please check your information and retry.';
+        const validationError = new Error(errorMsg);
+        (validationError as any).code = errData.code || 'VALIDATION_FAILED';
+        (validationError as any).status = res ? res.status : 500;
+        throw validationError;
+      }
     }
   } catch (err: any) {
-    // If it's our thrown validation/duplicate error, rethrow it directly
-    if (err.status || err.code === 'DUPLICATE_EMAIL' || err.code === 'CAPACITY_REACHED' || err.code === 'INVALID_EMAIL') {
+    // If it's our thrown validation/duplicate/capacity error, rethrow it directly
+    if (err.status || err.code === 'DUPLICATE_EMAIL' || err.code === 'CAPACITY_REACHED' || err.code === 'RLS_RESTRICTION') {
       throw err;
     }
-    // Only genuine offline/network exceptions are logged
     provider = 'UP N DOWN Local Secure Gateway (Network Fallback)';
     error = err.message;
   }
+
 
   const receipt: EmailDeliveryReceipt = {
     messageId,

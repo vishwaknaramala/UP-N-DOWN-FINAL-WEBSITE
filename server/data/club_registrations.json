@@ -1,5 +1,26 @@
 [
   {
+    "id": "85",
+    "name": "Vercel Health Test",
+    "email": "vercel_test_1793521205@upndownstore.in",
+    "rawEmail": "vercel_test_1793521205@upndownstore.in",
+    "phone": "+1234567890",
+    "passCode": "UND-2026-T1LRD2",
+    "positionNumber": 4,
+    "sizePreference": "M (Oversized)",
+    "tshirtSize": "L (Oversized)",
+    "pantSize": "38 (Extra Wide)",
+    "capSize": "One Size (Adjustable)",
+    "categories": [],
+    "launchDate": "31st Dec 2026",
+    "cryptoSignature": "SHA256_VERIFIED_ATELIER_2026",
+    "registeredAt": "2026-11-01T08:20:06.953164+00:00",
+    "createdAt": "2026-11-01T08:20:06.953164+00:00",
+    "source": "web_registration",
+    "supabaseSynced": true,
+    "supabaseId": 85
+  },
+  {
     "id": "82",
     "name": "Test User",
     "email": "testdebug@upndownstore.in",
