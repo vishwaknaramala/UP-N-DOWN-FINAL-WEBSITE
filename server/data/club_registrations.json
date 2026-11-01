@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": "82",
+    "name": "Test User",
+    "email": "testdebug@upndownstore.in",
+    "rawEmail": "testdebug@upndownstore.in",
+    "phone": "+1234567890",
+    "passCode": "UND-2026-MHR0QH",
+    "positionNumber": 1,
+    "sizePreference": "M (Oversized)",
+    "tshirtSize": "L (Oversized)",
+    "pantSize": "34 (Loose)",
+    "capSize": "One Size (Adjustable)",
+    "categories": [],
+    "launchDate": "31st Dec 2026",
+    "cryptoSignature": "SHA256_VERIFIED_ATELIER_2026",
+    "registeredAt": "2026-10-30T23:26:53.734898+00:00",
+    "createdAt": "2026-10-30T23:26:53.734898+00:00",
+    "source": "web_registration",
+    "supabaseSynced": true,
+    "supabaseId": 82
+  }
+]
