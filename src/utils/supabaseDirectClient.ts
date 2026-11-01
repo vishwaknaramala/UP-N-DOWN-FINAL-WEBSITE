@@ -159,3 +159,23 @@ export async function registerDirectToSupabase(params: DirectRegisterParams): Pr
     };
   }
 }
+
+/**
+ * Fetches current total registration count directly from Supabase table CLUB_REGISTRATIONS
+ */
+export async function getDirectSupabaseCount(): Promise<number | null> {
+  const supabase = getDirectSupabaseClient();
+  if (!supabase) return null;
+  try {
+    const { count, error } = await supabase
+      .from('CLUB_REGISTRATIONS')
+      .select('*', { count: 'exact', head: true });
+    if (!error && typeof count === 'number') {
+      return count;
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+

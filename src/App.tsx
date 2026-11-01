@@ -23,6 +23,7 @@ import { isSoundEnabled, setSoundEnabled, playTactileClick } from './utils/audio
 import { vibrateModalOpen } from './utils/haptics';
 import { WaitlistSubmission, GarmentItem } from './types';
 import { WifiOff, Download, Smartphone, X } from 'lucide-react';
+import { startLiveSlotSyncPolling } from './utils/liveSlotSync';
 
 export default function App() {
   const { isInstallable, isInstalled, isIOS, isOnline, installPWA } = usePWA();
@@ -44,7 +45,14 @@ export default function App() {
       setVipPass(existing);
     }
     setSoundActiveState(isSoundEnabled());
+
+    // Automatically sync live slot allocation globally from database across all devices
+    const stopPolling = startLiveSlotSyncPolling(15000);
+    return () => {
+      stopPolling();
+    };
   }, []);
+
 
   const handleToggleSound = () => {
     const next = !soundActive;
