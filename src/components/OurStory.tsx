@@ -32,7 +32,7 @@ export const OurStory: React.FC = () => {
           className="bg-[var(--bg-card)] border border-[var(--border-main)] p-6 sm:p-12 space-y-6 text-left shadow-lg transition-colors"
         >
           <p className="text-base sm:text-xl font-light text-[var(--text-primary)] leading-relaxed">
-            Born from passion, <strong className="font-semibold text-[var(--text-primary)]">UP N DOWN</strong> was created to redefine streetwear with a premium feel. We blend heavyweight custom fabrics, precise tailoring, and restrained silhouettes to bring individuality and confidence to everyday fashion.
+            <strong className="font-semibold text-[var(--text-primary)]">UP N DOWN</strong> was established in 2026 to bring premium feel streetwear for everyone. We blend heavyweight custom fabrics, precise tailoring, and restrained silhouettes to bring individuality and confidence to everyday fashion.
           </p>
 
           <div className="w-12 h-px bg-[var(--border-strong)]" />

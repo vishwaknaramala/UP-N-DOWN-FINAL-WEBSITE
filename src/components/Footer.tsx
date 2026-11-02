@@ -47,7 +47,7 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
             <p className="text-xs text-[var(--text-secondary)] font-light leading-relaxed">
-              Born from passion, UP N DOWN was created to redefine streetwear with a premium feel. Quality fabrics, precise stitching, and distinctive designs. Releasing 31st Dec 2026.
+              UP N DOWN was established in 2026 to bring premium feel streetwear for everyone. Quality fabrics, precise stitching, and distinctive designs. Releasing 31st Dec 2026.
             </p>
             <div className="space-y-1.5 text-[11px] font-mono text-[var(--text-muted)]">
               <div>
