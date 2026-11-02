@@ -94,6 +94,29 @@ app.get('/api/product-image/:id', (req: Request, res: Response) => {
   return res.status(404).json({ error: 'Product image not found' });
 });
 
+// Explicit sitemap.xml route for Googlebot / Search Console
+app.get('/sitemap.xml', (_req: Request, res: Response) => {
+  const sitemapPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+  if (fs.existsSync(sitemapPath)) {
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    return res.sendFile(sitemapPath);
+  }
+  return res.status(404).send('sitemap.xml not found');
+});
+
+// Explicit robots.txt route for search crawlers
+app.get('/robots.txt', (_req: Request, res: Response) => {
+  const robotsPath = path.join(process.cwd(), 'public', 'robots.txt');
+  if (fs.existsSync(robotsPath)) {
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    return res.sendFile(robotsPath);
+  }
+  return res.status(404).send('robots.txt not found');
+});
+
+
 // Resend Configuration from Server Environment Variables
 const RESEND_API_KEY = process.env.RESEND_API_KEY?.trim() || '';
 // If container has unverified onboarding@resend.dev, override to the verified upndownstore.in domain

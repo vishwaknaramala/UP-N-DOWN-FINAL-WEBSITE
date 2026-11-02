@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Atelier Storefront -->
+  <url>
+    <loc>https://upndownstore.in/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://upndownstore.in/assets/aistudio/UP_N_DOWN_LOGO_00d318c2.png</image:loc>
+      <image:title>UP N DOWN Atelier Logo — Same Energy Different Phase</image:title>
+      <image:caption>Official brand logo for UP N DOWN Streetwear Atelier 2026</image:caption>
+    </image:image>
+  </url>
+
+  <!-- The Club Early Access Waitlist & Registration -->
+  <url>
+    <loc>https://upndownstore.in/#waitlist</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://upndownstore.in/assets/aistudio/UP_N_DOWN_LOGO_00d318c2.png</image:loc>
+      <image:title>THE CLUB — Private 100 Slot Allocation</image:title>
+      <image:caption>Guaranteed early access reservation for UP N DOWN Drop 01 launching 31st Dec 2026 at 18:00 IST</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Lookbook & Curated Capsule Collection -->
+  <url>
+    <loc>https://upndownstore.in/#collection</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/CAP.jpeg</image:loc>
+      <image:title>UP N DOWN Stone Wash Grey Cap Style 07</image:title>
+      <image:caption>280 GSM washed cotton twill cap with frayed distressing and antique-brass buckle</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BLUE%20BAGGY%20FIT%20DENIM%20JEANS.jpeg</image:loc>
+      <image:title>UP N DOWN Ice Blue Loose Denim Jeans</image:title>
+      <image:caption>13.5 oz heavy selvedge denim in cloudy vintage stone wash with four-point star embroidery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BLACK%20RED%20EYE%20BAGGY%20FIT%20T%20SHIRT.jpeg</image:loc>
+      <image:title>UP N DOWN Celestial Eye Heavy Tee</image:title>
+      <image:caption>280 GSM combed cotton vintage black tee with high-density collar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BEIGE%20HAND%20T%20SHIRT.jpeg</image:loc>
+      <image:title>UP N DOWN Invisible Bond Atelier Tee</image:title>
+      <image:caption>280 GSM warm ivory oversized boxy tee with high-density embroidered crest</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Interactive 3D Runway Simulation -->
+  <url>
+    <loc>https://upndownstore.in/#3d-runway</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Brand Story & Design Philosophy -->
+  <url>
+    <loc>https://upndownstore.in/#story</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Product: Stone Wash Grey Cap -->
+  <url>
+    <loc>https://upndownstore.in/#upndown-cap-07</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/CAP.jpeg</image:loc>
+      <image:title>UP N DOWN Stone Wash Grey Cap (Style 07)</image:title>
+      <image:caption>Low-to-mid profile 6-panel washed cotton twill cap</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Product: Ice Blue Loose Denim Jeans -->
+  <url>
+    <loc>https://upndownstore.in/#upndown-denim-01</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BLUE%20BAGGY%20FIT%20DENIM%20JEANS.jpeg</image:loc>
+      <image:title>UP N DOWN Ice Blue Loose Denim Jeans</image:title>
+      <image:caption>Relaxed wide leg 13.5 oz denim with star embroidery and distressed details</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Product: Celestial Eye Heavy Tee -->
+  <url>
+    <loc>https://upndownstore.in/#upndown-tee-01</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BLACK%20RED%20EYE%20BAGGY%20FIT%20T%20SHIRT.jpeg</image:loc>
+      <image:title>UP N DOWN Celestial Eye Heavy Tee</image:title>
+      <image:caption>Vintage black 280 GSM heavy boxy fit cotton tee</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Product: Invisible Bond Atelier Tee -->
+  <url>
+    <loc>https://upndownstore.in/#upndown-tee-02</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://uwoyznudoiwjttoxnptr.supabase.co/storage/v1/object/public/prodct-images/BEIGE%20HAND%20T%20SHIRT.jpeg</image:loc>
+      <image:title>UP N DOWN Invisible Bond Atelier Tee</image:title>
+      <image:caption>Warm ivory 280 GSM heavy drape architectural tee</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

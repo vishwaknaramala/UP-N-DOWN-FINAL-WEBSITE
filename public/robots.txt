@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Exclude private admin portals & internal API endpoints from crawling
+Disallow: /api/
+Disallow: /uploads/
+
+# Host
+Host: https://upndownstore.in
+
+# Sitemaps
+Sitemap: https://upndownstore.in/sitemap.xml
